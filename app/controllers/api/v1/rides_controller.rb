@@ -19,7 +19,7 @@ class Api::V1::RidesController < ApplicationController
     def create
         @ride = current_user.passenger_rides.build(ride_params)
         if @ride.save 
-            render json: RideSerializer(@ride), status: :created
+            render json: RideSerializer.new(@ride), status: :created
         else 
             error_resp = {
                 error: @ride.errors.full_messages.to_sentence
