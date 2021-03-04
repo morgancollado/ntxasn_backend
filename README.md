@@ -1,24 +1,5 @@
-# README
+# North Texas Abortion Support Network Backend
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This Rails API is configured to allow sessions for a React/Redux front end. It houses all of the data for drivers, clients and requested rides. It feeds data to the front end apps via fetch requests. It is built in rails 6. 
 
-Things you may want to cover:
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
