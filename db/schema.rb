@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_08_215733) do
+ActiveRecord::Schema.define(version: 2021_03_09_000546) do
 
   create_table "rides", force: :cascade do |t|
     t.datetime "date_time"
@@ -30,8 +30,11 @@ ActiveRecord::Schema.define(version: 2021_03_08_215733) do
     t.integer "phone_number"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.time "availability_hours"
     t.string "availability_days"
+    t.time "availability_hours_lower"
+    t.time "availability_hours_upper"
+    t.boolean "driver", default: false
+    t.boolean "admin", default: false
   end
 
   add_foreign_key "rides", "users", column: "driver_id"
