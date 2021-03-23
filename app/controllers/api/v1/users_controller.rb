@@ -29,6 +29,7 @@ class Api::V1::UsersController < ApplicationController
   # PATCH/PUT /users/1
   def update
     if @user.update(user_params)
+      byebug
       render json: UserSerializer.new(@user), status: :created
     else
       render json: @user.errors, status: :unprocessable_entity
@@ -48,6 +49,6 @@ class Api::V1::UsersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def user_params
-      params.require(:user).permit(:name, :email, :password, :phone_number, :availability_days, :availability_hours_lower, :availability_hours_upper)
+      params.require(:user).permit(:name, :email, :password, :phone_number, :monday, :tuesday, :wednesday, :thursday, :friday, :saturday, :sunday,:availability_hours_lower, :availability_hours_upper)
     end
 end
