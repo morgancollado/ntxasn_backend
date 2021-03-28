@@ -57,7 +57,7 @@ class Api::V1::RidesController < ApplicationController
     end 
 
     def ride_params
-        params.require(:ride).permit(:date_time, :location_to, :location_from, :appointment_type, :passenger_id, :driver_id)
+        params.require(:ride).permit(:date_time, :location_to, :location_from, :appointment_type, :passenger_id, :driver_id, :initial_pickup, :clinic_dropoff, :clinic_pickup, :final_dropoff)
 
     end 
 
