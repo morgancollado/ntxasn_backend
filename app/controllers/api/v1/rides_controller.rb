@@ -9,7 +9,7 @@ class Api::V1::RidesController < ApplicationController
             render json: {
                 error: 'You must be logged in to see rides'
             }
-        end 
+        end
     end 
 
     def show 
@@ -36,7 +36,7 @@ class Api::V1::RidesController < ApplicationController
                 error: @ride.errors.full_messages.to_sentence
             }
             render json: error_resp, status: :unprocessable_entity
-        end 
+        end
     end 
 
     def destroy
@@ -47,7 +47,7 @@ class Api::V1::RidesController < ApplicationController
                 error: "Ride not found, not canceled"
             }
             render json: error_resp, status: :unprocessable_entity
-        end 
+        end
     end 
 
     private
@@ -57,7 +57,7 @@ class Api::V1::RidesController < ApplicationController
     end 
 
     def ride_params
-        params.require(:ride).permit(:date_time, :location_to, :location_from, :appointment_type, :passenger_id, :driver_id, :initial_pickup, :clinic_dropoff, :clinic_pickup, :final_dropoff)
+        params.require(:ride).permit(:date_time, :location_to, :location_from, :appointment_type, :passenger_id, :driver_id, :initial_pickup, :clinic_dropoff, :clinic_pickup, :final_dropoff,:attributes, :id)
 
     end 
 

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_25_151752) do
+ActiveRecord::Schema.define(version: 2021_04_12_231917) do
 
   create_table "rides", force: :cascade do |t|
     t.datetime "date_time"
@@ -25,6 +25,8 @@ ActiveRecord::Schema.define(version: 2021_03_25_151752) do
     t.boolean "clinic_dropoff", default: false
     t.boolean "clinic_pickup", default: false
     t.boolean "final_dropoff", default: false
+    t.string "stage", default: "initial_pickup"
+    t.integer "status", default: 0, null: false
   end
 
   create_table "users", force: :cascade do |t|
